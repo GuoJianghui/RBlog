@@ -1,0 +1,361 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+// 页面框架相关css
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+$color-black: #2a2730;
+
+// 导航组件
+.navbar {
+  background-color: rgba(33, 33, 33, 0.8);
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  position: fixed;
+  transition: all 1s ease;
+
+  nav {
+    .navbar-brand {
+      font-weight: bold;
+      letter-spacing: 5px;
+      font-family: 'Malapropism57eb638656761';
+      max-width: 200px;
+      vertical-align: bottom;
+      font-size: 2rem;
+      color: white;
+      b {
+        color: #27ae60;
+      }
+    }
+  }
+}
+
+.container-fluid {
+  width: 100%;
+  display: block;
+  min-height: -moz-calc(100vh - 4.5em - 3.25em);
+  min-height: -webkit-calc(100vh - 4.5em - 3.25em);
+  min-height: calc(100vh - 4.5em - 3.25em);
+}
+
+.container {
+  width: 100%;
+  padding-top: 4rem;
+  display: block;
+  min-height: -moz-calc(100vh - 4.5em - 3.25em);
+  min-height: -webkit-calc(100vh - 4.5em - 3.25em);
+  min-height: calc(100vh - 4.5em - 3.25em);
+}
+
+
+.jumbotron {
+  width: 100%;
+  height: 100vh;
+  max-width: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(<%= asset_path 'bg1.jpg' %>);
+
+  .info {
+    width: 40%;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 35vh;
+
+    .head-image {
+      margin: 0 auto;
+      img {
+        width: 10rem;
+        height: 12rem;
+        border-radius: 20% 60% 20% 60%;
+      }
+    }
+
+    .introduce {
+      color: #fff;
+      width: 100%;
+      background: rgba(33, 33, 33, 0.3);
+      padding: 1rem 0;
+      margin: 2rem auto 1rem;
+      display: inline-block
+
+    }
+  }
+}
+
+.panel {
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  .panel-header {
+    color: $color-black;
+    line-height: 3.6em;
+    padding-top: 4rem;
+    border-bottom: 3px #eee dashed;
+    text-align: center;
+
+    .info {
+      line-height: 2rem;
+      text-align: left;
+      color: #7b7a7a;
+    }
+  }
+  .panel-body {
+    padding: 2em 0;
+  }
+
+  .panel-footer {
+    width: 100%;
+    padding-top: 2rem;
+    text-align: center;
+    border-bottom: 3px #eee dashed;
+    .tags {
+      span {
+        font-size: 14px;
+        margin-right: 1rem;
+        border-bottom: 1px solid;
+        padding-bottom: .3rem;
+        &:before {
+          content: '#';
+          color: #555;
+          padding-right: 0.3rem;
+        }
+        &:after {
+          content: '';
+          width: 1px;
+        }
+      }
+    }
+    .actions {
+      padding-top: 3rem;
+    }
+  }
+}
+
+.media {
+  list-style: none;
+  font-family: Optima, "Helvetica Neue", sans-serif;
+  padding: 1rem 0;
+  .media-body {
+    .media-heading {
+      margin: 0;
+    }
+  }
+
+}
+
+.title {
+
+  &.-article-title {
+    display: inline;
+    color: black;
+  }
+
+  &.-list-title {
+    margin: 0.83rem 0;
+  }
+}
+
+.article-meta {
+  display: table;
+  color: #999;
+  font-family: Optima,"Helvetica Neue",sans-serif;
+  &.-center {
+    margin:0 auto;
+  }
+  .date {
+    display: table-cell;
+    line-height: 2.5em;
+    font-size: 13px;
+  }
+}
+
+.extend {
+  padding-top: 1rem !important;
+  h2 {
+    text-transform: uppercase;
+    color: #666;
+    font: 400 normal 13px/1.4 sans-serif;
+  }
+
+  ul {
+    padding-left: 20px;
+    list-style-type: square;
+  }
+}
+
+.pagination {
+  text-align: center;
+  padding: 1em;
+  cursor: default;
+  a, span {
+    padding: 0.2em 0.6em;
+  }
+
+  .disabled {
+    color: #aaaaaa;
+  }
+
+  .current {
+    color: #27ae60;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 17px;
+    display: inline-block;
+    width: 1.4em;
+    height: 1.4em;
+    line-height: 1.5;
+
+  }
+  a {
+    color: #797979;
+    &:hover, &:focus {
+      color: white;
+      background-color: #27ae60;
+      border-radius: 5px;
+    }
+  }
+}
+
+.footer {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: rgba(33, 33, 33, 0.8);
+  text-align: center;
+  color: white;
+
+  .copyright {
+    font-size: 1rem;
+  }
+}
+
+
+.left-fix-bar {
+  position: fixed;
+  width: 100px;
+  top:150px;
+  text-align: center;
+  font-size: 13px;
+  a {
+    background-color: black;
+    color: white;
+    display: block;
+    line-height: 4em;
+    margin: 25px 0;
+  }
+}
+
+.form-control {
+  width: 95%;
+  color: #555;
+  line-height: 2em;
+  margin-bottom: 20px;
+  margin: 0 auto 20px auto;
+  background-color: #fff;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  outline: 0;
+  padding: 6px 15px;
+  display: block;
+
+  &:focus {
+    border-color: #317DDA;
+    outline: 0;
+  }
+}
+
+.go-top {
+  position: fixed;
+  bottom: 30px;
+  left: 77%;
+  background: rgba(0, 39, 59, 0.2);
+  width: 44px;
+  height: 44px;
+  line-height: 44px;
+  border-radius: 5px;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+  text-align: center;
+  display: none;
+}
+
+blockquote {
+    border-left-width: 10px;
+    background-color: rgba(102,128,153,0.05);
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 15px 20px;
+    margin: 0 0 1.1em;
+    border-left: 5px solid rgba(39,174,96,0.75);
+
+    p {
+      font-size: 1em;
+      line-height: 1.6;
+      font-weight: 300;
+      margin-top: 0;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+}
+
+.prettyprint {
+  color: #c7254e;
+  background-color: #f9f2f4;
+  border-radius: 4px;
+  white-space: normal;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: .9em;
+  padding: 2px 4px;
+}
+
+#disqus_thread {
+  padding: 10px 25px !important;
+}
+
+.tagcloud {
+  min-height: 400px;
+  a {
+    padding:20px;
+    display: inline-block;
+    text-transform: uppercase;
+  }
+}
+
+.css1 {
+  color: #ccc;
+  font-size: 1.0em;
+}
+.css2 {
+  color:#6f6f6f;
+  font-size: 1.2em;
+}
+.css3 {
+  color:#404040;
+  font-size: 1.4em;
+}
+.css4 {
+  color: #111;
+  font-size: 1.6em;
+}
+
+.actions-center {
+  text-align: center;
+}

@@ -1,0 +1,44 @@
+.books-panel {
+  .title {
+    width: 90%;
+    font-weight: 800;
+    display: block;
+    text-align: center;
+    max-width: 600px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 3rem;
+    padding: 0.5rem;
+    background-color: #f4f4f4;
+  }
+
+  .books-list {
+    text-align: center;
+    padding-left: 0px;
+    display: table;
+
+    li {
+      width: 100%;
+      display: table-row;
+
+      .book-block {
+        width: 30%;
+        height: 360px;
+        padding: 1rem;
+        display: table-cell;
+        img {
+          width: 100%;
+        }
+
+        .book-title {
+          text-align: left;
+        }
+
+        .book_info {
+          text-align: left;
+          word-break: normal;
+        }
+      }
+    }
+  }
+}

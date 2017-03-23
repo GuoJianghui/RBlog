@@ -1,0 +1,18 @@
+<div class="container">
+  <% provide(:title, '关于') %>
+  <article class="panel">
+    <header class="panel-header">
+      <h1 class="title -article-title"><%= @post.title %></h1>
+    </header>
+    <div class="panel-body article">
+      <%= markdown(@post.body) %>
+    </div>
+    <div class="actions actions-center">
+      <% if logged_in? %>
+          <%= link_to 'Edit', edit_post_path(@post), class: 'btn' %>
+          <%= link_to 'Destroy', @post, class: 'btn', method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
+    </div>
+  </article>
+
+</div>

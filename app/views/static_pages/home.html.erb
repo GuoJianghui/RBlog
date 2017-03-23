@@ -1,0 +1,43 @@
+<div class="container-fluid">
+  <div class="jumbotron">
+    <div class="info">
+      <div class="head-image">
+        <img src="<%= image_path 'bg.jpg'  %>">
+      </div>
+      <h1 class="introduce">Articles about life, travel, books and code.</h1>
+    </div>
+  </div>
+  <div class="panel">
+    <div class="panel-body">
+      <% @posts.each_with_index do |post, index| %>
+          <% if post.id != 1 %>
+              <div class="media">
+                <div class="media-body">
+                  <time class="date">
+                    <span><%= post.created_at.to_s(:month_and_year) %></span>
+                  </time>
+                  <h2 class="media-heading"><%= link_to post.title, post %></h2>
+                  <%= post.info %>
+                </div>
+              </div>
+          <% end %>
+      <% end %>
+    </div>
+  </div>
+  <hr>
+  <div class="panel">
+    <div class="panel-body extend">
+      <h2>more links</h2>
+      <ul>
+        <li>
+          <a href="http://weibo.com/ripdent">Sina Weibo</a>
+        </li>
+        <li>
+          <a href="https://www.facebook.com/ripdent">Facebook</a>
+        </li>
+      </ul>
+      <h2>Contact</h2>
+      <a href="mailto:ripdent@hotmail.com" rel="nofollow">ripdent@hotmail.com</a>
+    </div>
+  </div>
+</div>

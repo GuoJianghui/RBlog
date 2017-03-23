@@ -1,0 +1,27 @@
+<div class="container">
+  <% provide(:title, 'Posts') %>
+  <div class="panel">
+    <div class="panel-body">
+      <ul class="entry-list">
+        <% @posts.each do |post| %>
+            <% if post.id != 1 %>
+                <li class="entry-item">
+                  <div class="entry-meta">
+                    <time class="date"><%= post.created_at.to_s(:month_and_year) %></time>
+                  </div>
+                  <div class="detail">
+                    <h2>
+                      <%= link_to post.title, post, class: 'name' %>
+                    </h2>
+                    <p class="info"><%= post.info %></p>
+                  </div>
+                </li>
+            <% end %>
+        <% end %>
+      </ul>
+    </div>
+    <div class="pagination">
+      <%= will_paginate @posts, :container => false %>
+    </div>
+  </div>
+</div>

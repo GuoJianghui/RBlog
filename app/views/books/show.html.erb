@@ -1,0 +1,48 @@
+<% provide(:title, @book.title) %>
+<article class="container-fluid panel">
+  <header class="panel-header">
+    <h1 class="post-title"><%= @book.title %></h1>
+    <% if @book.id > 1 %>
+        <div class="article-meta">
+          <time class="post-date">
+            <span><%= @book.created_at.to_s(:month_and_year) %></span>
+          </time>
+          <% if @book.tags.size > 0 %>
+              <div class="tags">
+                <% @book.tags.each do |tag| %>
+                    <span><%= tag.name %></span>
+                <% end %>
+              </div>
+          <% end %>
+        </div>
+    <% end %>
+  </header>
+  <div class="panel-body article">
+    <%= markdown(@book.body) %>
+  </div>
+  <div class="actions actions-center">
+    <% if logged_in? %>
+        <%= link_to 'Edit', edit_post_path(@book), class: 'btn' %>
+        <%= link_to 'Destroy', @book, class: 'btn', method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
+  </div>
+</article>
+
+<div class="panel">
+  <!-- 多说评论框 start -->
+  <div class="ds-thread" data-thread-key="<%= @book.id %>" data-title="<%= @book.title %>" data-url="<%= post_url %>"></div>
+  <!-- 多说评论框 end -->
+  <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"ripdent"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+  <!-- 多说公共JS代码 end -->
+</div>

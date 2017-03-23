@@ -1,0 +1,25 @@
+<script>
+  $('.container-fluid').css('padding-top', '0px');
+</script>
+<%= form_for(@post) do |f| %>
+  <div class="title-tag">
+    <%= f.text_field :tag_list, label: 'tags', class:'form-control', placeholder: "输入tags，用‘，’分开."  %>
+    <%= f.text_field :title, class: 'form-control', placeholder: '在这里填写标题' %>
+  </div>
+  <div class="info">
+    <%= f.text_field :info, class: 'form-control', placeholder: '在这里填写简介' %>
+  </div>
+  <ul class="tab">
+    <li><a class="tablinks active" onclick="switchTab(event, 'content');">编辑</a></li>
+    <li><a class="tablinks" onclick="switchTab(event, 'preview');">预览</a></li>
+  </ul>
+  <div id="content" class="tabcontent" style="display: block;">
+    <%= f.text_area :body, class: 'form-control'%>
+  </div>
+  <div id="preview" class="tabcontent" style="display: none;">
+    <div id="previewCotent"></div>
+  </div>
+  <div class="actions actions-center">
+    <%= f.submit "发布", class: 'btn'%>
+  </div>
+<% end %>

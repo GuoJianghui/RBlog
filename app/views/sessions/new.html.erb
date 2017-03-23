@@ -1,0 +1,15 @@
+<% provide(:title, "Log in") %>
+<div class="container">
+  <div class="panel">
+    <div class="panel-body sessions">
+      <%= form_for(:session, url: login_path) do |f| %>
+          <%= f.email_field :email, class: 'form-control', placeholder: '这里输入用户名' %>
+          <%= f.password_field :password, class: 'form-control', placeholder: '这里输入密码' %>
+          <div class="actions actions-center">
+            <%= f.submit "Log in", class: "btn btn-inline" %>
+          </div>
+
+      <% end %>
+    </div>
+  </div>
+</div>
