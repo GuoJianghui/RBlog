@@ -2,6 +2,7 @@
   $('.container-fluid').css('padding-top', '0px');
 </script>
 <%= form_for(@post) do |f| %>
+  <%= f.text_field :post_type, value: 'post', class: 'form-control', style: 'display: none' %>
   <div class="title-tag">
     <%= f.text_field :tag_list, label: 'tags', class:'form-control', placeholder: "输入tags，用‘，’分开."  %>
     <%= f.text_field :title, class: 'form-control', placeholder: '在这里填写标题' %>

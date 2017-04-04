@@ -18,7 +18,7 @@ module ApplicationHelper
     def rouge_formatter(opts={})
       opts ={
         line_numbers: true,
-        wrap: true
+        wrap: true,
       }
       Rouge::Formatters::HTML.new(opts)
     end

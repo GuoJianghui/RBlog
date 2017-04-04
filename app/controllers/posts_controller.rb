@@ -10,7 +10,7 @@ class PostsController < ApplicationController
     if params[:tag].present?
       @posts = Post.tagged_with(params[:tag]).page(params[:page]).order('created_at DESC')
     else
-      @posts = Post.post.order('created_at DESC').page(params[:page])
+      @posts = Post.order('created_at DESC').page(params[:page])
     end
 
     respond_to do |format|
@@ -86,7 +86,7 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :info, :slug, :body, :tag_list)
+      params.require(:post).permit(:title, :info, :slug, :body, :tag_list, :post_type)
     end
 
     # 确保用户已登录

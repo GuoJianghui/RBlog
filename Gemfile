@@ -22,8 +22,8 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 
-gem 'redcarpet',      '3.4.0'
-gem 'rouge'
+gem 'redcarpet'
+gem 'rouge', '1.11.1'
 gem 'sdoc',           '0.4.2', group: :doc
 gem 'sqlite3'
 gem 'acts-as-taggable-on', '~> 4.0.0'
