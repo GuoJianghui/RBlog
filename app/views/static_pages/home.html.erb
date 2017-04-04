@@ -14,7 +14,7 @@
               <div class="media">
                 <div class="media-body">
                   <time class="date">
-                    <span><%= post.created_at.to_s(:month_and_year) %></span>
+                    <span><%= post.created_at.to_date %></span>
                   </time>
                   <h2 class="media-heading"><%= link_to post.title, post %></h2>
                   <%= post.info %>
@@ -26,16 +26,16 @@
   </div>
   <div class="panel">
     <div class="panel-body extend">
-      <h2>more links</h2>
+      <h2>更多链接</h2>
       <ul>
         <li>
-          <a href="http://weibo.com/ripdent">Sina Weibo</a>
+          <a href="http://weibo.com/ripdent">新浪微博</a>
         </li>
         <li>
-          <a href="https://www.facebook.com/ripdent">Facebook</a>
+          <a href="https://www.facebook.com/ripdent">脸书</a>
         </li>
       </ul>
-      <h2>Contact</h2>
+      <h2>联系方式  </h2>
       <a href="mailto:ripdent@hotmail.com" rel="nofollow">ripdent@hotmail.com</a>
     </div>
   </div>

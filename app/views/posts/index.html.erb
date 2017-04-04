@@ -7,7 +7,7 @@
             <% if post.id != 1 %>
                 <li class="entry-item">
                   <div class="entry-meta">
-                    <time class="date"><%= post.created_at.to_s(:month_and_year) %></time>
+                    <time class="date"><%= post.created_at.to_date %></time>
                   </div>
                   <div class="detail">
                     <h2>

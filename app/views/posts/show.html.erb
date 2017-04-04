@@ -6,7 +6,7 @@
       <% if @post.id > 1 %>
           <div class="article-meta -center">
             <time class="date">
-              <span><%= @post.created_at.to_s(:month_and_year) %></span>
+              <span><%= @post.created_at.to_date %></span>
             </time>
           </div>
       <% end %>
