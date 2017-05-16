@@ -16,6 +16,7 @@ gem 'will_paginate', '3.1.5'
 
 gem 'sass-rails', '~> 5.0'
 gem 'font-awesome-sass'
+gem 'font-awesome-rails'
 gem 'uglifier', '2.5.3'
 gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails'

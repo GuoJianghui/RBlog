@@ -35,7 +35,7 @@ $desktop-width: 1024px;
     padding-top: 60px;
   }
   .navbar {
-    line-height: 3.5rem;
+    line-height: 3.3rem;
     float: none;
     nav {
       z-index: 1000;
@@ -58,7 +58,6 @@ $desktop-width: 1024px;
           vertical-align: middle;
           a {
             text-transform: uppercase;
-            font-family: "Avenir Next",Avenir,"Helvetica Neue",sans-serif;
             font-size: 15px;
             font-weight: 600;
             color: white;

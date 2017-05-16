@@ -1,0 +1,30 @@
+<%= form_for(photo) do |f| %>
+  <div class="row row-ex">
+    <div class="col-lg-6">
+      <%= f.text_field :title, class: 'form-control', placeholder: '标题'%>
+    </div>
+    <div class="col-lg-6">
+      <%= f.text_field :src, class: 'form-control', placeholder: '图源' %>
+    </div>
+  </div>
+  <div class="row row-ex">
+    <div class="col-lg-12">
+      <%= f.text_field :content, class: 'form-control', placeholder: '简介' %>
+    </div>
+  </div>
+  <div class="row row-ex">
+    <div class="col-lg-12">
+      <%= f.text_area :body, hidden: 'hidden', id: 'content-textarea', name: 'hidden' %>
+      <div class="editor">
+      </div>
+    </div>
+  </div>
+
+  <div class="actions actions-center">
+    <%= f.submit "发布", class: 'btn'%>
+  </div>
+<% end %>
+
+<script>
+  Reditor.init($("#content-textarea").val(), 'photo[body]');
+</script>

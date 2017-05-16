@@ -1,0 +1,25 @@
+<% if @photo.src %>
+<div class="backimg" style="background-image: url(<%= @photo.src %>)">
+
+</div>
+<% end %>
+<div class="container-fluid">
+  <div class="photo-panel">
+    <div class="header">
+      <time class="date"><%= @photo.created_at.to_date %></time>
+      <h1><%= @photo.title%></h1>
+    </div>
+
+    <div class="body">
+      <%= markdown(@photo.body) %>
+    </div>
+    <div class="actions actions-center">
+      <% if logged_in? %>
+          <%= link_to 'Edit', edit_photo_path(@photo), class: 'btn' %>
+      <% end %>
+    </div>
+
+  </div>
+
+
+</div>

@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="photo-panel">
+
+    <% @photos.each.with_index do |photo, index| %>
+      <% if index == 0 %>
+        <div class="photo-row">
+      <% end %>
+      <% if index < 2 %>
+        <%= link_to photo, class:'name' do %>
+          <div class="photo-columns photo-columns-half" style="background-image: url('<%= photo.src %>')">
+            <div class="info">
+              <time class="date"><%= photo.created_at.to_date %></time>
+              <h1 class="title"><%= photo.title %></h1>
+              <p><%= photo.content %></p>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+      <% if index == 2 %>
+        </div>
+        <div class="photo-row">
+      <% end %>
+      <% if index >= 2 %>
+        <div class="photo-columns photo-columns-third" style="background-image: url('<%= photo.src %>')">
+          <%= link_to photo, class:'name' do %>
+            <div class="info">
+              <time class="date"><%= photo.created_at.to_date %></time>
+              <h1 class="title"><%= photo.title %></h1>
+              <p><%= photo.content %></p>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  </div>
+</div>

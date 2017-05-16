@@ -13,7 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require reditor
 //= require_tree .
+
 $(function () {
 
   var $goTop = $('.go-top');

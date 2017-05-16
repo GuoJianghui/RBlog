@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= require reditor
  */
 // 页面框架相关css
 @import "font-awesome-sprockets";
@@ -23,6 +24,7 @@ $color-black: #2a2730;
 .navbar {
   background-color: rgba(33, 33, 33, 0.8);
   width: 100%;
+  z-index: 9999;
   margin-right: auto;
   margin-left: auto;
   position: fixed;
@@ -92,7 +94,8 @@ $color-black: #2a2730;
       background: rgba(33, 33, 33, 0.3);
       padding: 1rem 0;
       margin: 2rem auto 1rem;
-      display: inline-block
+      display: inline-block;
+      font-family: 'Malapropism57eb638656761';
 
     }
   }
@@ -104,6 +107,7 @@ $color-black: #2a2730;
   margin: 1rem auto;
   padding: 1.5rem;
   background-color: white;
+
   .panel-header {
     color: $color-black;
     line-height: 3.6em;
@@ -266,16 +270,14 @@ $color-black: #2a2730;
 }
 
 .form-control {
-  width: 95%;
+  width: 100%;
   color: #555;
   line-height: 2em;
-  margin-bottom: 20px;
-  margin: 0 auto 20px auto;
   background-color: #fff;
   border-radius: 3px;
   border: 1px solid #ccc;
   outline: 0;
-  padding: 6px 15px;
+  padding: 6px 12px;
   display: block;
 
   &:focus {
@@ -287,7 +289,7 @@ $color-black: #2a2730;
 .go-top {
   position: fixed;
   bottom: 30px;
-  left: 77%;
+  left: 95%;
   background: rgba(0, 39, 59, 0.2);
   width: 44px;
   height: 44px;
@@ -312,7 +314,7 @@ blockquote {
     p {
       font-size: 1em;
       line-height: 1.6;
-      font-weight: 300;
+      font-weight: 400;
       margin-top: 0;
       &:last-child {
         margin-bottom: 0;
@@ -362,4 +364,13 @@ blockquote {
 
 .actions-center {
   text-align: center;
+}
+
+.utils {
+  float: right;
+  padding-top: 10px;
+}
+
+.hidden {
+  display: none;
 }

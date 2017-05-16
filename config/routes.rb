@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :photos
   root 'static_pages#home'
 
   resources :posts
