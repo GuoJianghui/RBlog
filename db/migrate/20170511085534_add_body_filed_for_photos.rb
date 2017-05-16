@@ -1,4 +1,4 @@
-class AddBodyFiledForPhotos < ActiveRecord::Migration[5.0]
+class AddBodyFiledForPhotos < ActiveRecord::Migration
   def change
     add_column :photos, :body, :text
   end

@@ -1,4 +1,4 @@
-class CreatePhotos < ActiveRecord::Migration[5.0]
+class CreatePhotos < ActiveRecord::Migration
   def change
     create_table :photos do |t|
       t.string :title
