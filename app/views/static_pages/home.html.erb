@@ -7,23 +7,23 @@
       <h1 class="introduce">Just Coding For Fun</h1>
     </div>
   </div>
+  <% @posts.each_with_index do |post, index| %>
   <div class="panel">
     <div class="panel-body">
-      <% @posts.each_with_index do |post, index| %>
-          <% if post.id != 1 %>
-              <div class="media">
-                <div class="media-body">
-                  <time class="date">
-                    <span><%= post.created_at.to_date %></span>
-                  </time>
-                  <h2 class="media-heading"><%= link_to post.title, post %></h2>
-                  <%= post.info %>
-                </div>
-              </div>
-          <% end %>
+      <% if post.id != 1 %>
+        <div class="media">
+          <div class="media-body">
+            <time class="date">
+              <span><%= post.created_at.to_date %></span>
+            </time>
+            <h2 class="media-heading"><%= link_to post.title, post %></h2>
+            <p class="media-content"><%= post.info %></p>
+          </div>
+        </div>
       <% end %>
     </div>
   </div>
+  <% end %>
   <div class="panel">
     <div class="panel-body extend">
       <h2>更多链接</h2>

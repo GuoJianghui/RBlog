@@ -1,30 +1,23 @@
 <div class="container">
   <% provide(:title, 'Posts') %>
+  <% @posts.each do |post| %>
   <div class="panel">
     <div class="panel-body">
-      <ul class="entry-list">
-        <% @posts.each do |post| %>
-            <% if post.id != 1 %>
-                <li class="entry-item">
-                  <div class="entry-meta">
-                    <time class="date"><%= post.created_at.to_date %></time>
-                  </div>
-                  <div class="detail">
-                    <h2>
-                      <%= link_to post.title, post, class: 'name' %>
-                    </h2>
-                    <p class="info"><%= post.info %></p>
-                  </div>
-                </li>
-            <% end %>
-        <% end %>
-      </ul>
+      <% if post.id != 1 %>
+        <div class="media">
+          <div class="media-body">
+            <time class="date">
+              <span><%= post.created_at.to_date %></span>
+            </time>
+            <h2 class="media-heading"><%= link_to post.title, post %></h2>
+            <p class="media-content"><%= post.info %></p>
+          </div>
+        </div>
+      <% end %>
     </div>
   </div>
-  
-      <div class="panel pagination">
-      <%= will_paginate @posts, :container => false %>
-    </div>
-  
-    
+  <% end %>
+  <div class="panel pagination">
+    <%= will_paginate @posts, :container => false %>
+  </div>
 </div>
