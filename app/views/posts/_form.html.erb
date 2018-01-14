@@ -2,33 +2,64 @@
   $('.container-fluid').css('padding-top', '0px');
 </script>
 <%= form_for(@post) do |f| %>
-  <%= f.text_field :post_type, value: 'post', class: 'form-control', style: 'display: none' %>
-  <div class="row row-ex">
-    <div class="col-lg-12">
-      <div class="title-tag">
-        <%= f.text_field :tag_list, label: 'tags', class:'form-control', placeholder: "输入tags，用‘，’分开."  %>
-        <%= f.text_field :title, class: 'form-control', placeholder: '在这里填写标题' %>
+  <%= f.text_field :post_type, value: 'post', class: 'input form-control', style: 'display: none' %>
+
+  <div class="form-group">
+    <label for="post_tag_list" class="col-sm-2 control-label">标签：</label>
+    <div class="col-sm-10">
+      <%= f.select :tag_list, @tags.collect { |t| [t.name,t.name] }, {}, { :multiple => "multiple" } %>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="post_title" class="col-sm-2 control-label">标题：</label>
+    <div class="col-sm-10">
+      <%= f.text_field :title, class: 'form-control', placeholder: '在这里填写标题' %>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+  <div class="form-group">
+    <label for="post_info" class="col-sm-2 control-label">简介：</label>
+    <div class="col-sm-10">
+      <%= f.text_area :info, class: 'form-control', placeholder: '在这里填写简介' %>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+  <div class="content">
+    <div class="">
+      <div id="editor" class="editor">
+        <%= f.text_area :body, id: 'input'%>
       </div>
     </div>
   </div>
-  <div class="row row-ex">
-    <div class="col-lg-12">
-      <div class="info">
-        <%= f.text_field :info, class: 'form-control', placeholder: '在这里填写简介' %>
-      </div>
-    </div>
-  </div>
-  <div class="row row-ex">
-    <div class="col-lg-12">
-      <%= f.text_area :body, hidden: 'hidden', id: 'content-textarea', name: 'hidden' %>
-      <div class="editor">
-      </div>
-    </div>
-  </div>
-  <div class="actions actions-center">
-    <%= f.submit "发布", class: 'btn'%>
+  <div class="clearfix"></div>
+  <div class="action mgto20 center-block">
+    <%= f.submit "发布", class: 'btn btn-success'%>
+    <button type="button" id="preview" class="btn btn-success">预览</button>
   </div>
 <% end %>
+<div class="output">
+  <div class="row">
+    <button type="button" class="btn btn-success pull-right" id="close">关闭</button>
+  </div>
+  <div class="content"></div>
+</div>
 <script>
-  Reditor.init($("#content-textarea").val(), 'post[body]');
+$(function(){
+  // 隐藏底部
+  $('footer.footer').css('display', 'none');
+
+  // 预览
+  $('#preview').on('click', function() {
+    $('.output .content').html(marked($('#input').val(), { sanitize: true }));
+    $('.output').css('display', 'block')
+  });
+  // 关闭预览
+  $('#close').on('click', function() {
+    $('.output').css('display', 'none')
+  });
+
+  $("#post_tag_list").select2({
+      theme: "bootstrap"
+  });
+});
 </script>

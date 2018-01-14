@@ -1,77 +1,23 @@
-$phone-width: 480px;
-$tablet-width: 768px;
-$desktop-width: 1024px;
+$phone-width: 768px;
+$tablet-width: 992px;
+$desktop-width: 1200px;
 
-@media (max-device-width: $phone-width) {
-  .navbar {
-    padding-top: 1rem;
-    nav {
-      .navbar-brand {
-        width: 100%;
-        display: block;
-        margin: 0 auto;
-        text-align: center;
-      }
-      .navbar-nav {
-        list-style-type: none;
-        padding-left: 2rem;
-        padding-right: 2rem;
-        padding-bottom: 2rem;
-        li {
-          display: inline-block;
-          width: 30%;
-          text-align: center;
-          a {
-            color: white;
-          }
-        }
-      }
-    }
+@media (min-width: $desktop-width) {
+  .container {
+      width: 1170px!important;
   }
 }
 
-@media (min-device-width: $tablet-width){
-  .main {
-    padding-top: 60px;
+
+@media (min-width: $tablet-width) {
+  .container {
+      width: 970px!important;
   }
-  .navbar {
-    line-height: 3.3rem;
-    float: none;
-    nav {
-      z-index: 1000;
-      width: 90%;
-      max-width: 910px;
-      margin-right: auto;
-      margin-left: auto;
+}
 
-      .navbar-brand {
-        display: inline-block;
-      }
 
-      .navbar-nav {
-        float: right;
-        height: 100%;
-        margin: 0;
-        li {
-          padding: 0 20px;
-          display: inline-block;
-          vertical-align: middle;
-          a {
-            text-transform: uppercase;
-            font-size: 17px;
-            font-weight: 400;
-            color: white;
-          }
-          &:last-child {
-            padding: 0 0 0 20px;
-          }
-          &:hover {
-            a {
-              color: #F75353;
-            }
-          }
-        }
-      }
-    }
+@media (min-width: $phone-width) {
+  .container {
+      width: 860px!important;
   }
 }

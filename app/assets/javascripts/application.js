@@ -13,11 +13,21 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require select2
 //= require reditor
+//= require marked
+//= require lodash
 //= require_tree .
-
 $(function () {
+  $('body').on('click', '#sidebar-open', function() {
+    $('aside').css('width', '336px');
+    $('.sidebar-overlay').addClass('active');
+  })
 
+  $('body').on('click', '#sidebar-close', function() {
+    $('aside').css('width', '0');
+    $('.sidebar-overlay').removeClass('active');
+  });
   var $goTop = $('.go-top');
   // go top
   $goTop.on('click', function () {

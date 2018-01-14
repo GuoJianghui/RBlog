@@ -1,27 +1,37 @@
-<div class="container-fluid">
-  <div class="jumbotron">
-    <div class="info">
-      <div class="head-image">
-        <img src="<%= image_path 'bg.jpg'  %>">
-      </div>
-      <h1 class="introduce">Just Coding For Fun</h1>
-    </div>
+<div class="top">
+  <div class="info">
+    RIPDENT
   </div>
+</div>
+<div class="container mgto20">
   <% @posts.each_with_index do |post, index| %>
-  <div class="panel panel-pretty">
-    <div class="panel-body">
-      <% if post.id != 1 %>
-        <div class="media">
-          <div class="media-body">
-            <time class="date">
-              <span><%= post.created_at.to_date %></span>
-            </time>
-            <h2 class="media-heading"><%= link_to post.title, post %></h2>
-            <p class="media-content"><%= post.info %></p>
+    <% if post.id != 1 %>
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+          <div class="panel panel-default shadow">
+            <div class="panel-heading panel-heading-img">
+              <div class="panel-title">
+                <p class="headline">
+                  <%= link_to post.title, post %>
+                </p>
+              </div>
+            </div>
+            <div class="panel-body">
+              <p class="content">
+                <%= post.info %>
+              </p>
+            </div>
+            <div class="panel-footer">
+              <time><%= post.created_at.to_date %></time>
+              <div class="tags pull-right">
+                <% post.tags.each do |tag| %>
+                  <span class="label label-success"><%= tag.name %></span>
+                <% end %>
+              </div>
+            </div>
           </div>
         </div>
-      <% end %>
-    </div>
-  </div>
+      </div>
+    <% end %>
   <% end %>
 </div>

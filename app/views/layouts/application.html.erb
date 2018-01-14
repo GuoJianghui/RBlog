@@ -1,22 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
   <meta name="author" content="GuoJianghui">
-  <link href='//cdn.webfont.youziku.com/webfonts/nomal/26465/37509/57c50143f629d81968ff0e51.css' rel='stylesheet' type='text/css' />
   <title><%= full_title(yield(:title)) %></title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+  <!-- <%= csrf_meta_tags %> -->
   <%= render 'layouts/shim' %>
 </head>
 <body>
+  <i class="fa fa-bars fa-lg pull-right" id='sidebar-open' aria-hidden="true"></i>
   <%= render 'layouts/header' %>
       <%= yield %>
-      <div class="go-top fa fa-chevron-up"></div>
+      <!-- <div class="go-top fa fa-chevron-up"></div> -->
   <%= render 'layouts/footer' %>
 </body>
 </html>

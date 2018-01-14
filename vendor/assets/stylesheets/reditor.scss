@@ -1,57 +1,40 @@
-ul.tab {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  border-bottom: 1px solid #ccc;
-}
+.editor {
+  .form-group {
+    height: 34px;
+  }
+  .content {
+    min-height: 50rem;
+    #input {
+      background-color: #f6f6f6;
+      border: none;
+      outline: none;
+      border-right: 1px solid #ccc;
+      padding: 20px;
+      vertical-align: top;
+      resize: none;
+      min-height: 50rem;
+      width: 100%;
+    }
+  }
+  textarea {
+    resize: none;
+  }
 
-ul.tab li {
-  float: left;
-  padding-right: 10px;
-}
-
-/* Style the links inside the list items */
-ul.tab li a {
-  display: inline-block;
-  color: black;
-  text-align: center;
-  padding: 5px 10px;
-  text-decoration: none;
-  transition: 0.3s;
-  font-size: 17px;
-  border: 1px solid #f0f0f0;
-  border-bottom: none;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  font-size: 14px;
-}
-
-/* Change background color of links on hover */
-ul.tab li a:hover {
-  background-color: #ddd;
-}
-
-/* Create an active/current tablink class */
-ul.tab li a:focus, .active {
-  background-color: #ddd;
-}
-
-/* Style the tab content */
-.tabcontent {
-  display: none;
-  margin: 0;
-  border: 1px solid #ccc;
-  border-top: none;
-  background-color: white;
-  #post_body {
-    border: none;
+  span.select2 {
+    width: 100%!important;
   }
 }
 
-#preview {
-  height: 500px;
-  display: block;
-  padding: 0px 10px;
-  overflow-y: auto;
+.output {
+  position: absolute;
+  display: none;
+  top: 20px;
+  right: 0;
+  left: 0;
+  padding: 20px;
+  background: white;
+  min-height: 768px;
+  height: fit-content;
+  width: 60%;
+  margin: auto;
 }

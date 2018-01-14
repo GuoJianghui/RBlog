@@ -27,10 +27,12 @@ class PostsController < ApplicationController
   # GET /posts/new
   def new
     @post = Post.new
+    @tags = Post.tag_counts_on(:tags)
   end
 
   # GET /posts/1/edit
   def edit
+    @tags = Post.tag_counts_on(:tags)
   end
 
   # POST /posts
@@ -86,7 +88,7 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :info, :slug, :body, :tag_list, :post_type)
+      params.require(:post).permit(:title, :info, :slug, :body, { tag_list: [] }, :post_type)
     end
 
     # 确保用户已登录

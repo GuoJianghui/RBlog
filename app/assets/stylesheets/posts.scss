@@ -1,130 +1,70 @@
-// Place all the styles related to the Posts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-form {
-
-  .title-tag {
-    margin: 0 6px;
-    display: table;
-    width: 100%;
-
-    #post_title {
-      display: table-cell;
-      width: 67%;
-      border-left: none;
-    }
-
-    #post_tag_list {
-      display: table-cell;
-      width: 25%;
-    }
-  }
-
-  textarea {
-    height: 500px;
-    max-width: 98%;
-    max-height: 95%;
-    padding: 6px 10px;
-    resize: none;
-    font-family: 微软雅黑, 'Microsoft YaHei';
-    &:focus {
-      border-color: #317DDA;
-      outline: 0;
-    }
-  }
-  .actions {
-    line-height: 5em;
-    padding: 0px 10px;
-    .btn {
-      width: 15%;
-      display: inline;
-    }
-  }
-}
-
-.posts {
-  ul {
-    width: 70%;
-    margin: 0 auto;
-    padding: 0px;
-    list-style: none;
-    li {
-      padding: 20px 0;
-      border-bottom: 1px #eee dashed;
-      a {
-        color: black;
-      }
-      span {
-        display: inline-block;
-        float: right;
-      }
-      &:last-child {
-        border: none;
-      }
-    }
-  }
-}
-
-.entry-list {
-  list-style: none;
-  line-height: 25px;
-  min-height: 50px;
-  padding-left: 0;
-  margin: 0 auto;
-
-  font-family: Optima, "Helvetica Neue", sans-serif;
+.panel {
   .info {
-    color: #7b7a7a;
-    font-size: 1rem;
-  }
-  .entry-item {
-    list-style: none;
-    line-height: 25px;
-    min-height: 50px;
-    margin: 3rem 0;
-  }
-
-  .entry-meta {
-    font-size: 12px;
-    color: #999;
-  }
-
-  .detail {
-    h2 {
-      font-size: 24px;
-      margin: 8px 0 12px;
-      -webkit-font-smoothing: antialiased;
+    height: 40px;
+    .tags {
+      padding-top: 10px;
+      padding-right: 10px;
+    }
+    time {
+      padding-top: 10px;
+      padding-left: 10px;
     }
   }
+  .article-content {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    padding: 10px 50px;
+    h3 {
+      border-bottom: 1px solid #eee;
+    }
+    img {
+      width: 100%;
+    }
+  }
+
+}
+.article-content h1, .article-content h2, .article-content h3, .article-content h4, .article-content h5, .article-content h6 {
+  margin: 1em 0 15px;
+  padding: 0 0 2px 0;
+  font-weight: bold;
+  line-height: 1.7;
+  cursor: text;
+  position: relative;
+}
+.comment {
+  padding: 10px 50px;
 }
 
-.article {
-  p {
-    line-height: 1.8em;
-  }
-
-  img {
-    width: 100%;
-  }
-
-  a {
-    padding-bottom: 2px;
-    border-bottom: 1px solid #999;
-  }
-  h2 {
-    margin-top: 2em;
-    //border-bottom: 1px solid #eee;
-  }
-}
-
-.actions {
+.pagination {
+  width: 100%;
   text-align: center;
-  padding-bottom: 20px;
-  .btn {
-    width: 90px;
-    margin: 0 auto;
-    text-align: center;
-    background-color: white;
-    font-size: 14px;
+
+  a.previous_page {
+    color: #5cb85c;
   }
+  a.next_page {
+    color: #5cb85c;
+  }
+  .previous_page {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.82);
+    border-radius: 50px;
+    line-height: 3rem;
+    font-size: 2rem;
+    float: left;
+  }
+  .next_page {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.82);
+    border-radius: 50px;
+    line-height: 3rem;
+    font-size: 2rem;
+    float: right;
+  }
+}
+ // 编辑器
+.editor {
 }
