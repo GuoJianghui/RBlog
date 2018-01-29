@@ -6,3 +6,25 @@
     padding: 0 21px !important;
   }
 }
+
+.login {
+  height: 83.8vh;
+  position: relative;
+  .panel {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 200px;
+    .panel-body {
+      .form-group {
+        padding-top: 10px;
+      }
+      .action {
+        text-align: center;
+      }
+    }
+  }
+}
